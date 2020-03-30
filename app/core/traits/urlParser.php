@@ -3,7 +3,6 @@
 namespace Core\Traits;
 
 
-
 trait  TraitUrlParser {
     public function parseUrl($url = '') {
         if(empty($url))

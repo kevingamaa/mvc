@@ -1,21 +1,57 @@
 <?php
 
 
-function dd(...$vars) {
-   
+function dd(...$vars)
+{
+
     echo "<div style='background: #000; color: green; padding: 20px'>";
-    foreach($vars as $var) {
-        if(is_array($var) || is_object($var)) {
-            echo "<pre>";
-                print_r($var);
-            echo "</pre>";
-        }
-
-        if(is_string($var) || is_bool($var) || is_numeric($var)) {
-            echo $var;
-        }
-
+    foreach ($vars as $var) {
+        echo "<pre>";
+        var_dump($var);
+        echo "</pre>";
     }
     echo "</div>";
     die();
+}
+
+
+function auth()
+{
+    if (isset($_SESSION['user'])) {
+        return true;
+    }
+}
+
+
+function assets($item)
+{
+    return DIRPUBLIC . $item;
+}
+
+
+function route($route)
+{
+    return DIRPAGE . $route;
+}
+
+
+
+function redirect($route, $data = []) 
+{
+    $get  = route($route);
+    if(count($data) > 0) {
+        $get .= '?';
+    }
+    foreach ($data as $key => $value) {
+        # code...
+        $get .= "{$key}=$value&";
+    }
+    
+    header("Location: {$get}");
+}
+
+
+function _method($method) 
+{
+    echo "<input type='hidden' name='_method' value='{$method}'>";
 }

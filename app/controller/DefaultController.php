@@ -4,19 +4,8 @@ namespace App\Controllers;
 
 class DefaultController {
 
-
-
-    function __construct()
-    {
-        echo "dsssads";
-    }
-
-
-    public function index() {
-        
-    }
     public function notFound() {
-        echo 'rota não encontrada';
+        echo 'not found';
     }
 
 
