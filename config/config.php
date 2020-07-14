@@ -1,13 +1,13 @@
 <?php
 #diretorios raiz
-$internPath = "projeto-tunneling/";
-define('DIRPAGE', "{$_SERVER['REQUEST_SCHEME']}://{$_SERVER['HTTP_HOST']}/{$internPath}" );
+$internPath = "";
+define('DIRPAGE', (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]/" );
 // dd
 if(substr($_SERVER['DOCUMENT_ROOT'], -1) === '/') 
 {
-    define('DIRREQ', "{$_SERVER['DOCUMENT_ROOT']}{$internPath}");
+    define('DIRREQ',  __DIR__."/../{$internPath}");
 } else {
-    define('DIRREQ', __DIR__."/../"); 
+    define('DIRREQ', __DIR__."/../{$internPath}"); 
 }
 
 

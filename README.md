@@ -5,7 +5,7 @@ ter o **composer** instalado em sua maquina, junto ao básico e simples **LAMP**
 
 Com tudo instalado corretamente, está na hora de baixar o repositório dentro da pasta localhost.
 
-    git clone https://github.com/kevingamaa/projeto-tunneling.git
+    git clone https://github.com/kevingamaa/mvc.git
 
 Agora acesse a pasta do projeto pelo terminal e rode o seguinte comando
 
@@ -13,11 +13,11 @@ Agora acesse a pasta do projeto pelo terminal e rode o seguinte comando
 
 Logo depois configure seu arquivo .env para ter acesso ao banco de dados
 
-    DB_DATABASE="tunneling"
+    DB_DATABASE="test"
     DB_USERNAME="youruser"
     DB_PASSWORD="yourpassword"
 
-Depois do .env configurado, você vai encontrar um arquivo chamado **tunneling.sql** com a estrutura do banco de dados.
+Depois do .env configurado, você vai encontrar um arquivo chamado **test.sql** com a estrutura do banco de dados.
 
 cria o banco de dados com nome "tunneling" e import a estrutura.
-concluindo  todos os passos, o projeto estará disponível na seguinte url: http://localhost/projeto-tunneling/
+concluindo  todos os passos, o projeto estará disponível na seguinte url: http://localhost:8000
